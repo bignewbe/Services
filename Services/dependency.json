@@ -1,0 +1,8 @@
+{
+  "DebugAndRelease": {
+    "CryptoCommon": "1.0.0",
+    "CommonCSharpLibary": "1.0.0",
+    "PortableCSharpLib": "1.0.0"
+  },
+    "Single": {}
+}
