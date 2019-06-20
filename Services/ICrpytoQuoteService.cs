@@ -1,14 +1,16 @@
-﻿using PortableCSharpLib.TechnicalAnalysis;
+﻿using CryptoCommon.DataTypes;
+using PortableCSharpLib.TechnicalAnalysis;
 using System.Collections.Generic;
 
 namespace Services
 {
     public interface ICrpytoQuoteService
     {
-        string GetExchange();
-        List<string> GetAvaliableSymbols();
-        List<string> GetAvaliableQuoteIds();
-        QuoteCapture GetInMemoryQuoteCapture(string symbol);
-        QuoteBasicBase GetInMemoryQuoteBasic(string symbol, int interval);
+        //ServiceResult<string> GetExchange();
+        ServiceResult<List<string>> GetAvaliableSymbols();
+        ServiceResult<List<string>> GetAvaliableQuoteIds();
+        ServiceResult<QuoteCapture> GetInMemoryQuoteCapture(string symbol);
+        ServiceResult<QuoteBasicBase> GetInMemoryQuoteBasic(string symbol, int interval);
+        ServiceResult<QuoteBasicBase> GetQuoteBasic(string symbol, int interval, long stime, int num);
     }
 }

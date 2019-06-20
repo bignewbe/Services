@@ -10,6 +10,7 @@
         Okex_Future_QuoteBasicDataAppended,
         Okex_Future_OnTickerList,
         Okex_Future_OnCandleList,
+        Okex_Future_OnFutureOrderList,
 
         Kraken_QuoteBasicDataAppended,
         Kraken_OnTickerList,

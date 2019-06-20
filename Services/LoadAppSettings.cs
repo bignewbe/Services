@@ -13,10 +13,12 @@ namespace Services
             var configfile = string.Empty;
             if (env == null || env == "DEV")
                 configfile = "appsettings.DEV.json";
-            else if (env == "PRD")
-                configfile = "appsettings.PRD.json";
-            else if (env == "DKR")
-                configfile = "appsettings.DKR.json";
+            //else if (env == "PRD")
+            //    configfile = "appsettings.PRD.json";
+            //else if (env == "DKR")
+            //    configfile = "appsettings.DKR.json";
+            else
+                configfile = $"appsettings.{env}.json";
 
             var configFolder = Environment.GetEnvironmentVariable("ENV_CONFIG_FOLDER");
             if (string.IsNullOrEmpty(configFolder))  //serch upwards for folder "appsettings"

@@ -1,4 +1,5 @@
 ﻿using CryptoCommon.DataTypes;
+using CryptoCommon.Future.Interface;
 using PortableCSharpLib.DataType;
 using PortableCSharpLib.TechnicalAnalysis;
 using System.Collections.Generic;
@@ -7,13 +8,14 @@ namespace Services
 {
     public interface ICryptoCaptureService
     {
-        string GetExchange();
-        List<string> GetAvailableSymbols();
-        Ticker GetTicker(string symbol);
-        //Dictionary<string, Ticker> GetTickers();
-        Orderbook GetOrderbook(string symbol);
-        List<OHLC> GetOHLC(string symbol, int interval);
-        QuoteBasicBase Download(string symbol, int interval, int limit = 300);
+        ServiceResult<string> GetExchange();
+        ServiceResult<List<string>> GetAvailableSymbols();
+        ServiceResult<Ticker> GetTicker(string symbol);
+        ServiceResult<Orderbook> GetOrderbook(string symbol);
+        ServiceResult<List<OHLC>> GetOHLC(string symbol, int interval);
+        ServiceResult<QuoteBasicBase> Download(string symbol, int interval, int limit = 300);        
+        
+        //Orderbook GetOrderBookByInstrumentId(string instrument_id);
         //three messages
         //event EventHandlers.TickerReceivedEventHandlerList OnTickerListReceived;
         //event EventHandlers.ExceptionOccuredEventHandler OnExceptionOccured;
