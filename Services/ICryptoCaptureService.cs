@@ -1,5 +1,4 @@
 ﻿using CryptoCommon.DataTypes;
-using CryptoCommon.Future.Interface;
 using PortableCSharpLib.DataType;
 using PortableCSharpLib.TechnicalAnalysis;
 using System.Collections.Generic;
@@ -11,9 +10,11 @@ namespace Services
         ServiceResult<string> GetExchange();
         ServiceResult<List<string>> GetAvailableSymbols();
         ServiceResult<Ticker> GetTicker(string symbol);
+        ServiceResult<Dictionary<string, Ticker>> GetTickers();
         ServiceResult<Orderbook> GetOrderbook(string symbol);
         ServiceResult<List<OHLC>> GetOHLC(string symbol, int interval);
-        ServiceResult<QuoteBasicBase> Download(string symbol, int interval, int limit = 300);        
+        ServiceResult<QuoteBasicBase> Download(string symbol, int interval, int limit = 300);      
+        
         
         //Orderbook GetOrderBookByInstrumentId(string instrument_id);
         //three messages
