@@ -7,13 +7,13 @@ namespace Services
 {
     public interface ISpotTradeService
     {
-        ServiceResult<List<SpotOrder>> GetOpenOrders(string instrument_id);       //submmiting + open + cancelling + partial filled
-        ServiceResult<List<SpotOrder>> GetClosedOrders(string instrument_id);     //fully filled orders
+        ServiceResult<List<SpotOrder>> GetOpenOrders(string instrument_id, bool isReturnAll=false);         //submmiting + open + cancelling + partial filled
+        ServiceResult<List<SpotOrder>> GetClosedOrders(string instrument_id, bool isReturnAll = false);     //fully filled orders
         //ServiceResult<List<SpotOrder>> GetCancelleddOrders(string instrument_id); //fully filled orders
         //ServiceResult<List<SpotOrder>> GetFailedOrders(string instrument_id);     //fully filled orders
 
         ServiceResult<bool> CancelOrder(string symbol, string orderId);
-        ServiceResult<SpotOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid);
+        ServiceResult<SpotOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid, double? triggerprice = null);
         ServiceResult<SpotOrder> CheckOrder(string symbol, string orderId);
 
         //account
