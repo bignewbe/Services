@@ -10,6 +10,11 @@
         Okex_Spot_OnSpotBalance,
         Okex_Spot_OnOrderBook,
 
+        Okex_Spot_OnSpotTradeInfo,
+        Okex_Spot_OnOrderUpdated,
+        Okex_Spot_OnOpenOrderList,
+        Okex_Spot_OnCloseOrderList,
+
         Okex_Future_QuoteBasicDataAppended,
         Okex_Future_OnTickerList,
         Okex_Future_OnCandleList,

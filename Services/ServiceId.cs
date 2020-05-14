@@ -4,10 +4,10 @@
     {
         Okex_ISubscribeService,
 
-
         Okex_Spot_ICrpytoQuoteService,
         Okex_Spot_ICryptoCaptureService,
         Okex_ISpotTradeService,
+        Okex_ISpotClient,
 
         Okex_Future_ICrpytoQuoteService,
         Okex_IFutureCaptureService,

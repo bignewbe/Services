@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace Services
 {
@@ -49,11 +50,15 @@ namespace Services
             Console.WriteLine($"Base configuration file = {baseconfigfile}");
             Console.WriteLine($"Configuration file = {configfile}");
 
+            var lines = File.ReadAllLines(configfile).Where(l => !l.Contains("#")).ToArray();
+            var tmpConfigFile = configfile + ".tmp";
+            File.WriteAllLines(tmpConfigFile, lines);
+
             /////////////////////////////////////////////////////////////////////////////////
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile(baseconfigfile)
-                .AddJsonFile(configfile, optional: false)
+                .AddJsonFile(tmpConfigFile, optional: false)
                 .Build();
 
             return config;
