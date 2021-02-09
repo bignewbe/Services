@@ -8,6 +8,7 @@
         Okex_Spot_OnCandleList,
         Okex_Spot_OnSpotOrderList,
         Okex_Spot_OnSpotBalance,
+        Okex_Spot_OnSpotBalanceList,
         Okex_Spot_OnOrderBook,
 
         Okex_Spot_OnSpotTradeInfo,
@@ -23,6 +24,13 @@
         Okex_Future_OnAccountBalance,
         Okex_Future_OnOrderBook,
 
+        //SwapConOrder
+        Okex_Future_OnOpenSwapConOrderList,
+        Okex_Future_OnClosedSwapConOrderList,
+        Okex_Future_OnSwapConOrderChanged,
+        Okex_Future_OnFutureTradeStatus,
+
+        
         Okex_Swap_QuoteBasicDataAppended,
         Okex_Swap_OnTickerList,
         Okex_Swap_OnCandleList,
