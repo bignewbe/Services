@@ -15,8 +15,10 @@ namespace Services
         //ServiceResult<List<SpotOrder>> GetFailedOrders(string instrument_id);     //fully filled orders
 
         ServiceResult<bool> CancelOrder(string symbol, string orderId);
-        ServiceResult<SpotOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid, double? triggerprice = null);
         ServiceResult<SpotOrder> CheckOrder(string symbol, string orderId);
+        ServiceResult<SpotOrder> PlaceStopOrder(string symbol, OrderType type, double amount, double tpPrice, double slPrice);
+        ServiceResult<SpotOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid, double? triggerprice = null);
+        ServiceResult<SpotOrder> PlaceOrder(SpotOrder order);
 
         //account
         ServiceResult<Dictionary<string, SpotBalance>> GetAccounts();
