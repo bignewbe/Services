@@ -7,18 +7,18 @@ namespace Services
 {
     public interface ISpotTradeService
     {
-        //ServiceResult<bool> UpdateLastTimeForOrder(SpotOrder order);
+        //ServiceResult<bool> UpdateLastTimeForOrder(FZOrder order);
         ServiceResult<long> GetLastTimeForOrder(string orderId, string symbol);
-        ServiceResult<List<SpotOrder>> GetOpenOrders(string instrument_id, bool isReturnAll=false);         //submmiting + open + cancelling + partial filled
-        ServiceResult<List<SpotOrder>> GetClosedOrders(string instrument_id, bool isReturnAll = false);     //fully filled orders
-        //ServiceResult<List<SpotOrder>> GetCancelleddOrders(string instrument_id); //fully filled orders
-        //ServiceResult<List<SpotOrder>> GetFailedOrders(string instrument_id);     //fully filled orders
+        ServiceResult<List<FZOrder>> GetOpenOrders(string instrument_id, bool isReturnAll=false);         //submmiting + open + cancelling + partial filled
+        ServiceResult<List<FZOrder>> GetClosedOrders(string instrument_id, bool isReturnAll = false);     //fully filled orders
+        //ServiceResult<List<FZOrder>> GetCancelleddOrders(string instrument_id); //fully filled orders
+        //ServiceResult<List<FZOrder>> GetFailedOrders(string instrument_id);     //fully filled orders
 
         ServiceResult<bool> CancelOrder(string symbol, string orderId);
-        ServiceResult<SpotOrder> CheckOrder(string symbol, string orderId);
-        ServiceResult<SpotOrder> PlaceStopOrder(string symbol, OrderType type, double amount, double tpPrice, double slPrice);
-        ServiceResult<SpotOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid, double? triggerprice = null);
-        ServiceResult<SpotOrder> PlaceOrder(SpotOrder order);
+        ServiceResult<FZOrder> CheckOrder(string symbol, string orderId);
+        ServiceResult<FZOrder> PlaceStopOrder(string symbol, OrderType type, double amount, double tpPrice, double slPrice);
+        ServiceResult<FZOrder> PlaceOrder(string symbol, OrderType type, double price, double amount, string refid, double? triggerprice = null);
+        ServiceResult<FZOrder> PlaceOrder(FZOrder order);
 
         //account
         ServiceResult<Dictionary<string, SpotBalance>> GetAccounts();
